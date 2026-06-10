@@ -13,6 +13,19 @@ export default defineConfig({
     server: { entry: "server" },
   },
   build: {
-    chunkSizeWarningLimit: 1500,
+    chunkSizeWarningLimit: 2000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: [
+            'react',
+            'react-dom',
+            '@tanstack/react-query',
+            '@tanstack/react-router',
+            '@tanstack/react-start'
+          ]
+        }
+      }
+    }
   },
 });
