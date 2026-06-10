@@ -1,0 +1,10 @@
+services:
+  - type: static
+    name: communication-bridge
+    env: static
+    buildCommand: npm ci; npm run build
+    staticPublishPath: dist
+    # Add any required environment variables in the Render dashboard under "Environment".
+    # Example:
+    #   VITE_SUPABASE_URL: your-supabase-url
+    #   VITE_SUPABASE_ANON_KEY: your-anon-key
